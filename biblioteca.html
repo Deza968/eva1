@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVA - Biblioteca Virtual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <div class="sidebar-logo">
+      <svg viewBox="0 0 88 32" fill="none">
+        <rect x="0" y="0" width="32" height="32" rx="7" fill="#FE004E"/>
+        <text x="16" y="22" font-family="Inter" font-weight="800" font-size="19" fill="white" text-anchor="middle">E</text>
+        <text x="40" y="22" font-family="Inter" font-weight="700" font-size="18" fill="white" letter-spacing="-0.4">EVA</text>
+      </svg>
+    </div>
+    <div class="sidebar-close" id="sidebarClose">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-item" data-href="dashboard.html">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Inicio
+    </div>
+    <div class="nav-item" data-href="unidades-didacticas.html">
+      <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg>
+      Mis unidades didácticas
+      <span class="arrow">▾</span>
+    </div>
+    <div class="nav-item active" data-href="biblioteca.html">
+      <svg viewBox="0 0 24 24"><path d="M4 20h16v2H4zm0-14h16v2H4zm0 7h16v2H4zm0-3.5A1.5 1.5 0 0 1 2.5 8 1.5 1.5 0 0 1 4 6.5 1.5 1.5 0 0 1 5.5 8 1.5 1.5 0 0 1 4 9.5zm0 7A1.5 1.5 0 0 1 2.5 15 1.5 1.5 0 0 1 4 13.5 1.5 1.5 0 0 1 5.5 15 1.5 1.5 0 0 1 4 16.5z"/></svg>
+      Biblioteca
+      <span class="arrow">▾</span>
+    </div>
+    <div class="nav-item" data-href="publicaciones.html">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      Publicaciones
+    </div>
+    <div class="nav-item" data-href="pagos.html">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/></svg>
+      Pagos
+    </div>
+    <div class="nav-item" data-href="tramites.html">
+      <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 10H8v-2h6v2zm2-4H8V6h8v2z"/></svg>
+      Trámites
+      <span class="arrow">▾</span>
+    </div>
+    <div class="nav-item" data-href="empleabilidad.html">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+      Empleabilidad
+      <span class="arrow">▾</span>
+    </div>
+    <div class="nav-item" id="beneficiosToggle">
+      <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+      Beneficios
+      <span class="arrow">▾</span>
+    </div>
+    <div class="nav-sub">
+      <div class="nav-sub-item" data-href="beneficios.html">
+        <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.59-1.59L12 14l3.47 5.82L17 22l1.7-.71c-1.77-4.77-3.7-10.29-1.7-13.29zM12 4l-1.41 1.41L12 6.83l1.41-1.42z"/></svg>
+        Mis referidos
+      </div>
+      <div class="nav-sub-item" onclick="window.open('https://zoom.zegel.edu.pe/ReservaSitio/Index?token=+jsBH0DUcY3SDnUIapbG7QP1TNVJ6dY/ug/RdZ8b6zHuHjVVjV4rwanb1O5OU80AW90XvR/XjB8qbtmmIU2NhQ==', '_blank')">
+        <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.59-1.59L12 14l3.47 5.82L17 22l1.7-.71c-1.77-4.77-3.7-10.29-1.7-13.29zM12 4l-1.41 1.41L12 6.83l1.41-1.42z"/></svg>
+        Reserva de espacios
+      </div>
+      <div class="nav-sub-item" data-href="orientacion-psicologica.html">
+        <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.59-1.59L12 14l3.47 5.82L17 22l1.7-.71c-1.77-4.77-3.7-10.29-1.7-13.29zM12 4l-1.41 1.41L12 6.83l1.41-1.42z"/></svg>
+        Orientación psicológica
+      </div>
+      <div class="nav-sub-item" data-href="becas.html">
+        <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1.59-1.59L12 14l3.47 5.82L17 22l1.7-.71c-1.77-4.77-3.7-10.29-1.7-13.29zM12 4l-1.41 1.41L12 6.83l1.41-1.42z"/></svg>
+        Becas
+      </div>
+    </div>
+    <div class="nav-item" data-href="guia-estudiante.html">
+      <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      Guía del estudiante
+      <span class="arrow">▾</span>
+    </div>
+    <div class="nav-item" data-href="encuestas.html">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+      Encuestas
+    </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-bottom-item" id="helpSidebar">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+          Ayuda
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+<div class="content">
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+      <h1>Biblioteca Virtual</h1>
+    </div>
+    <div class="top-actions">
+      <div class="btn-icon help-icon" aria-label="Ayuda">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+      </div>
+      <div class="btn-icon" aria-label="Notificaciones">
+        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+      </div>
+      <div class="btn-icon" aria-label="Mensajes">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div class="user-prof" id="userProf">
+        <div class="user-av" id="avatarLetter">W</div>
+        <span class="user-name" id="userName">Wendolyn Hasbun</span>
+        <span class="user-arrow">▼</span>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="dropdown-item" id="logoutBtn">
+            <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+            Cerrar sesión
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-area">
+    <div class="center" style="padding-bottom:80px">
+      <div class="bib-cards">
+        <div class="bib-card" onclick="window.open('https://openlibrary.org/','_blank')">
+          <div class="bib-card-icon" style="background:#dbeafe;"><svg viewBox="0 0 24 24" fill="#2563eb"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg></div>
+          <h3>Open Library</h3>
+          <p>Más de 3 millones de libros digitales de acceso gratuito.</p>
+        </div>
+        <div class="bib-card" onclick="window.open('https://archive.org/details/texts','_blank')">
+          <div class="bib-card-icon" style="background:#fce7f3;"><svg viewBox="0 0 24 24" fill="#fe004e"><path d="M4 20h16v2H4zm0-14h16v2H4zm0 7h16v2H4zm0-3.5A1.5 1.5 0 0 1 2.5 8 1.5 1.5 0 0 1 4 6.5 1.5 1.5 0 0 1 5.5 8 1.5 1.5 0 0 1 4 9.5zm0 7A1.5 1.5 0 0 1 2.5 15 1.5 1.5 0 0 1 4 13.5 1.5 1.5 0 0 1 5.5 15 1.5 1.5 0 0 1 4 16.5z"/></svg></div>
+          <h3>Internet Archive</h3>
+          <p>Biblioteca digital sin fines de lucro con millones de libros.</p>
+        </div>
+        <div class="bib-card" onclick="window.open('https://www.gutenberg.org/','_blank')">
+          <div class="bib-card-icon" style="background:#dcfce7;"><svg viewBox="0 0 24 24" fill="#15803d"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div>
+          <h3>Proyecto Gutenberg</h3>
+          <p>Más de 70,000 libros electrónicos gratuitos.</p>
+        </div>
+      </div>
+      <a class="chat-float" href="https://wa.me/51999999999" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
+        Chat S.A.E
+      </a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

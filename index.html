@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVA - Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="login-body">
+
+  <div class="login-card">
+    <div class="login-logo">
+      <svg viewBox="0 0 88 32" fill="none">
+        <rect x="0" y="0" width="32" height="32" rx="7" fill="#FE004E"/>
+        <text x="16" y="22" font-family="Inter" font-weight="800" font-size="19" fill="white" text-anchor="middle">E</text>
+        <text x="38" y="22" font-family="Inter" font-weight="700" font-size="16" fill="#1e293b" letter-spacing="-0.4">EVA</text>
+      </svg>
+    </div>
+    <h1>Iniciar sesión</h1>
+    <p class="sub">Ingresa tus credenciales para acceder</p>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <form id="loginForm">
+      <div class="field">
+        <label for="user">Usuario o correo</label>
+        <input type="text" id="user" placeholder="ejemplo@correo.com" required />
+      </div>
+      <div class="field">
+        <label for="pass">Contraseña</label>
+        <input type="password" id="pass" placeholder="••••••••" required />
+      </div>
+      <button type="submit" id="loginBtn">Ingresar</button>
+    </form>
+
+    <div class="links">
+      <a href="#" onclick="alert('Demo: recuperar contraseña'); return false;">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <div class="footer-links">
+      <a href="#" onclick="alert('Demo: términos'); return false;">Términos</a> &middot;
+      <a href="#" onclick="alert('Demo: privacidad'); return false;">Privacidad</a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
